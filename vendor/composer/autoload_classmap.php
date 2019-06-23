@@ -6,7 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Activities' => $baseDir . '/app/models/Activities.php',
     'ActivitiesTypes' => $baseDir . '/app/models/ActivitiesTypes.php',
     'Events' => $baseDir . '/app/models/Events.php',
+    'Subscription' => $baseDir . '/app/models/Subscription.php',
     'User' => $baseDir . '/app/models/Users.php',
 );

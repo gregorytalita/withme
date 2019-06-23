@@ -9,6 +9,10 @@ class ComposerStaticInitedf04f397158305fe5ecf4db3ef970be
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -21,6 +25,7 @@ class ComposerStaticInitedf04f397158305fe5ecf4db3ef970be
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
+            'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
         ),
         'I' => 
@@ -29,6 +34,12 @@ class ComposerStaticInitedf04f397158305fe5ecf4db3ef970be
             'Illuminate\\Database\\' => 20,
             'Illuminate\\Contracts\\' => 21,
             'Illuminate\\Container\\' => 21,
+        ),
+        'G' => 
+        array (
+            'GuzzleHttp\\Psr7\\' => 16,
+            'GuzzleHttp\\Promise\\' => 19,
+            'GuzzleHttp\\' => 11,
         ),
         'D' => 
         array (
@@ -57,6 +68,10 @@ class ComposerStaticInitedf04f397158305fe5ecf4db3ef970be
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
         ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
@@ -77,6 +92,18 @@ class ComposerStaticInitedf04f397158305fe5ecf4db3ef970be
         array (
             0 => __DIR__ . '/..' . '/illuminate/container',
         ),
+        'GuzzleHttp\\Psr7\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
+        ),
+        'GuzzleHttp\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
+        ),
+        'GuzzleHttp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
         'Doctrine\\Common\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
@@ -87,9 +114,21 @@ class ComposerStaticInitedf04f397158305fe5ecf4db3ef970be
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'U' => 
+        array (
+            'Unirest\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/mashape/unirest-php/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
+        'Activities' => __DIR__ . '/../..' . '/app/models/Activities.php',
         'ActivitiesTypes' => __DIR__ . '/../..' . '/app/models/ActivitiesTypes.php',
         'Events' => __DIR__ . '/../..' . '/app/models/Events.php',
+        'Subscription' => __DIR__ . '/../..' . '/app/models/Subscription.php',
         'User' => __DIR__ . '/../..' . '/app/models/Users.php',
     );
 
@@ -98,6 +137,7 @@ class ComposerStaticInitedf04f397158305fe5ecf4db3ef970be
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitedf04f397158305fe5ecf4db3ef970be::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitedf04f397158305fe5ecf4db3ef970be::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitedf04f397158305fe5ecf4db3ef970be::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitedf04f397158305fe5ecf4db3ef970be::$classMap;
 
         }, null, ClassLoader::class);

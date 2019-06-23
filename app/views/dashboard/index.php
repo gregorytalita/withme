@@ -9,9 +9,11 @@
         $array = $data['categories']; 
 
         for($i = 0; $i < count($array); $i ++) {
-            echo "<div class='feature-card'>
+            echo "<div class='feature-card' onClick='window.location.pathname = `events/index/";
+            echo $array[$i]["name"];
+            echo"`'>
                     <svg class='feature-card__icon'>
-                        <use xlink:href='./assets/images/sprite.svg#tent'></use>
+                        <use xlink:href='/assets/images/sprite.svg#tent'></use>
                     </svg>
                     <h3 class='feature-card__text'>";
             echo $array[$i]["name"];

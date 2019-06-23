@@ -1,6 +1,8 @@
 {
     "require": {
-        "illuminate/database": "^5.8"
+        "illuminate/database": "^5.8",
+        "guzzlehttp/guzzle": "~6.0",
+        "mashape/unirest-php": "^3.0"
     },
     "autoload": {
         "classmap": [

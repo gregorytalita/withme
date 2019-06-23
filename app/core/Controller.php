@@ -25,7 +25,6 @@ class Controller {
 
     public function goback() {
         echo "<script>history.go(-1);</script>";
-
     }
 
     public function redirect($path = '/') {
@@ -43,10 +42,6 @@ class Controller {
         session_start();
         $_SESSION['fullname'] = $fullname;
         $_SESSION['email'] = $email;
-    }
-
-    public function destroySession() {
-
     }
 
 }

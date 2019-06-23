@@ -10,7 +10,7 @@
             <div class='profile__form-left'>
                 <div class='row'>
                     <div class='avatar center-align'>
-                        <img src='./assets/images/profile.jpeg' alt='Profile picture' class='circle profile__form-img'>
+                        <img src='/assets/images/profile.jpeg' alt='Profile picture' class='circle profile__form-img'>
                     </div>
                 </div>
                 <div class='row'>

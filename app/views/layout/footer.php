@@ -1,7 +1,7 @@
         <footer class='footer'>
             <div class='footer__logo-box'>
                 <svg class='footer__logo'>
-                    <use xlink:href='./assets/images/sprite.svg#campfire'></use>
+                    <use xlink:href='/assets/images/sprite.svg#campfire'></use>
                 </svg>
             </div>
 
@@ -16,6 +16,6 @@
             </div>
         </footer>
 
-        <script src='./js/index.js'></script>
+        <script src='/js/index.js'></script>
     </body>
 </html>

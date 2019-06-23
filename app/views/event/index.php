@@ -1,42 +1,50 @@
 <section class='welcome__section'>
     <h1 class='heading-secondary'>
-        Role para ir comer pizza na garden
+        <?php echo $data['event']['name'] ?>
     </h1>
 </section>
 
 <div class='event-presentation__section u-margin-bottom-big u-margin-top-big '>
-    <div class="event-presentation">
-        <div class="event-presentation__details">
+    <div class="event-presentation" >
+        <div class="event-presentation__details" style="min-width: 800px;  display: flex; flex-direction: column;"> 
             <div class="event-presentation__details-content">
                 <ul class="collection with-header">
                     <li class="collection-header">
                         <div class="event-presentation__details-header">
-                            <img src="./assets/images/event-01.jpg" alt="Event picture" class="circle event-presentation__details-img">
+                            <img src="/assets/images/event-01.jpg" alt="Event picture" class="circle event-presentation__details-img">
                             <div>
                                 <span class="title">
-                                    25 de Maio, 2019
+                                    <?php echo $data['event']['date']?>
                                 </span>
-                                <p>$</p>
+                                <p>
+                                    R$<?php echo $data['event']['price']?>
+                                </p>
                             </div>
                         </div>
-                        <a href="./subscribed.html" class="secondary-content">
-                            <i class="material-icons">add</i>
-                        </a>
+                        <?php 
+                            if($data['subscribed'] == false){
+                        ?>
+                            <a href="/events/subscribe/<?php echo $data['event']['id'] ?>" class="secondary-content">
+                                <i class="material-icons">add</i>
+                            </a>
+                        <?php } else { ?>
+                            <a href="/events/unsubscribe/<?php echo $data['event']['id'] ?>" class="secondary-content">
+                                <i class="material-icons">remove</i>
+                            </a>
+                        <?php } ?>
                     </li>
                     <li class="collection-item">
                         <div>
                             Descrição
                             <br/>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                            Tempora rerum nisi sit animi voluptatum quis quia neque ipsum corporis enim et numquam 
-                            consequatur soluta, eum asperiores fuga vel nemo dicta!
+                            <?php echo $data['event']['description']?>
                         </div>
                     </li>
                     <li class="collection-item">
                         <div>
                             Horario
                             <a href="#!" class="secondary-content">
-                                20:00
+                                <?php echo $data['event']['time']?>
                             </a>
                         </div>
                     </li>
@@ -44,7 +52,7 @@
                         <div>
                             Valor
                             <a href="#!" class="secondary-content">
-                                R$ 25,00
+                                R$ <?php echo $data['event']['price']?>
                             </a>
                         </div>
                     </li>
@@ -52,7 +60,7 @@
                         <div>
                             Local
                             <a href="#!" class="secondary-content">
-                                Garden pizzaria, proximo ao posto...
+                                <?php echo $data['event']['place']?>
                             </a>
                         </div>
                     </li>
@@ -60,7 +68,7 @@
                         <div>
                             Cidade
                             <a href="#!" class="secondary-content">
-                                Ararangua
+                                <?php echo $data['event']['city']?>
                             </a>
                         </div>
                     </li>
@@ -68,25 +76,40 @@
                         <div>
                             Local
                             <a href="#!" class="secondary-content">
-                                Santa Catarina
+                                <?php echo $data['event']['state']?>
                             </a>
                         </div>
                     </li>
                     <li class="collection-item">
                         Inscritos
                         <div class="secondary-content">
-                            <img src="./assets/images/profile.jpeg" alt="Profile subscribed" class="event-presentation__subscribed">
-                            <img src="./assets/images/profile.jpeg" alt="Profile subscribed" class="event-presentation__subscribed">
-                            <img src="./assets/images/profile.jpeg" alt="Profile subscribed" class="event-presentation__subscribed">
-                            <img src="./assets/images/profile.jpeg" alt="Profile subscribed" class="event-presentation__subscribed">
-                            <img src="./assets/images/profile.jpeg" alt="Profile subscribed" class="event-presentation__subscribed">
-                            <img src="./assets/images/profile.jpeg" alt="Profile subscribed" class="event-presentation__subscribed">
+                            <?php 
+                                foreach($data['subscriptions'] as $subscription){
+                            ?> 
+                                <img 
+                                    src="/assets/images/profile.jpeg" 
+                                    alt="Profile subscribed" 
+                                    class="event-presentation__subscribed tooltipped"
+                                    data-position="bottom" data-tooltip="<?php echo $subscription['fullname']?>"
+                                >
+                            <?php } ?>
                         </div>
                     </li>
                 </ul>
             </div>
+            <?php if($data['owner'] == true){?>
+                <div style='display: flex; justify-content: space-between'> 
+                    <a class='button-text'>Editar</a>
+                    <a class='button-text' href='/events/deleteEvent/<?php echo $data["event"]["id"] ?>'>Excluir</a>
+                </div>
+            <? } ?>
         </div>
-
     </div>
-
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const elems = document.querySelectorAll('.tooltipped')
+        const instances = M.Tooltip.init(elems)
+    })
+</script>

@@ -6,7 +6,7 @@
         <ul class='navbar__list hide-on-med-and-down'>
             <a href='/dashboard/'><li class='navbar__item'>Eventos</li></a>
             <a href='/events/myevents/'><li class='navbar__item'>Meus Eventos</li></a>
-            <a href='/events/subscribed/'><li class='navbar__item'>Eventos inscrito</li></a>
+            <a href='/events/eventSubscribed/'><li class='navbar__item'>Eventos inscrito</li></a>
             <a href='/profile/'><li class='navbar__item'>Perfil</li></a>
             <a href='/auth/logout/'><li class='navbar__item'>Sair</li></a>
         </ul>
@@ -16,7 +16,7 @@
 <ul class='sidenav' id='mobile-demo'>
     <a href='/dashboard/'><li>Eventos</li></a>
     <a href='/events/myevents/'><li>Meus Eventos</li></a>
-    <a href='/events/subscribed/'><li>Eventos inscrito</li></a>
+    <a href='/events/eventSubscribed/'><li>Eventos inscrito</li></a>
     <a href='/profile/'><li>Perfil</li></a>
     <a href='/auth/logout/'><li>Sair</li></a>
 </ul>

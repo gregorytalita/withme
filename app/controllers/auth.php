@@ -11,7 +11,7 @@
 
             $user = User::where('email', $email)->first();
             if($password != $user->password) {
-                $this->gotback();
+                $this->goback();
                 return 0;
             }
 
@@ -29,7 +29,7 @@
             $error = $password != $confirmPass;
             if($error == true) {
                 $this->goback();
-                return 0;
+                // $this->view('home/index', ['error' => $error]);
             }
             
             User::create([ 

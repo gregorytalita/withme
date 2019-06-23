@@ -1,6 +1,6 @@
 <section class='welcome__section'>
     <h1 class='heading-secondary'>
-        Eventos relacionados a: <?php echo $data['type']; ?>
+        Eventos que você esta inscrito
     </h1>
 </section>
 
@@ -37,5 +37,4 @@
             require './app/views/layout/error.php';
             }
         ?>
-    
 </section>
